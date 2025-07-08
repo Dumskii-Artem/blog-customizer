@@ -1,0 +1,31 @@
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	width: 210px;
+	height: 50px;
+	text-align: center;
+	border: 1px solid #000000;
+	cursor: pointer;
+}
+
+.button_apply {
+	background-color: #ffc802;
+}
+
+.button_clear {
+	background-color: white;
+}
+
+.button_apply:hover {
+	background-color: #ffedab;
+}
+
+.button_clear:hover {
+	background-color: #000000;
+}
+
+.button_clear:hover div {
+	color: white;
+}
