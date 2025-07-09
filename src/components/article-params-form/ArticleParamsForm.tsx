@@ -18,7 +18,7 @@ import {
 } from 'src/constants/articleProps';
 
 import styles from './ArticleParamsForm.module.scss';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import clsx from 'clsx';
 import { Separator } from 'src/ui/separator';
 
@@ -32,6 +32,7 @@ export const ArticleParamsForm = ({
 	const [formIsOpened, setFormIsOpened] = useState(false);
 	const [formSettings, setFormSettings] =
 		useState<ArticleStateType>(defaultArticleState);
+	const refForm = useRef<HTMLFormElement | null>(null);
 
 	const {
 		backgroundColor,
@@ -88,7 +89,7 @@ export const ArticleParamsForm = ({
 				className={clsx(styles.container, {
 					[styles.container_open]: formIsOpened,
 				})}>
-				<form className={styles.form} onSubmit={handleSubmit}>
+				<form className={styles.form} onSubmit={handleSubmit} ref={refForm}>
 					<Text as='h2' size={31} weight={800} uppercase>
 						Задайте параметры
 					</Text>
