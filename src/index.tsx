@@ -30,10 +30,10 @@ const App = () => {
 			style={
 				{
 					'--font-family': settings.fontFamilyOption.value,
-					'--font-size': defaultArticleState.fontSizeOption.value,
-					'--font-color': defaultArticleState.fontColor.value,
-					'--container-width': defaultArticleState.contentWidth.value,
-					'--bg-color': defaultArticleState.backgroundColor.value,
+					'--font-size': settings.fontSizeOption.value,
+					'--font-color': settings.fontColor.value,
+					'--container-width': settings.contentWidth.value,
+					'--bg-color': settings.backgroundColor.value,
 				} as CSSProperties
 			}>
 			<ArticleParamsForm applySettings={handleApplySettings} />
