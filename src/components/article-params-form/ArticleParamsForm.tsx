@@ -21,6 +21,7 @@ import styles from './ArticleParamsForm.module.scss';
 import React, { useRef, useState } from 'react';
 import clsx from 'clsx';
 import { Separator } from 'src/ui/separator';
+import { useCloseForm } from '../hooks/useCloseForm';
 
 type ArticleParamsFormProps = {
 	applySettings: (settings: ArticleStateType) => void;
@@ -32,7 +33,7 @@ export const ArticleParamsForm = ({
 	const [formIsOpened, setFormIsOpened] = useState(false);
 	const [formSettings, setFormSettings] =
 		useState<ArticleStateType>(defaultArticleState);
-	const refForm = useRef<HTMLFormElement | null>(null);
+	const refForm = useRef<HTMLFormElement>(null);
 
 	const {
 		backgroundColor,
@@ -80,6 +81,12 @@ export const ArticleParamsForm = ({
 		applySettings(formSettings);
 		toggleForm();
 	};
+
+	useCloseForm({
+		isOpen: formIsOpened,
+		refForm: refForm,
+		onClose: () => setFormIsOpened(false),
+	});
 
 	return (
 		<>
