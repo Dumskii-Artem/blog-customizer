@@ -1,3 +1,5 @@
+// src\components\article-params-form\ArticleParamsForm.module.scss
+
 .container {
 	position: fixed;
 	left: 0;
@@ -16,6 +18,7 @@
 	display: flex;
 	flex-shrink: 0;
 	flex-direction: column;
+	gap: 50px; // добавлено
 	box-sizing: border-box;
 	width: 616px;
 	height: auto;
